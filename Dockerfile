@@ -8,6 +8,7 @@ RUN apt-get update \
     && \
     apt-get install -y --no-install-recommends --no-install-suggests \
         python3 \
+        python3-bs4 \
         lib32stdc++6 \
         lib32gcc1 \
         wget \
@@ -25,8 +26,8 @@ RUN apt-get update \
     && \
     wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - -C /steamcmd
 
-ENV ARMA_BINARY=./arma3server
-ENV ARMA_CONFIG=main.cfg
+ENV ARMA_BINARY=./arma3server_x64
+ENV ARMA_CONFIG=server.cfg
 ENV ARMA_PROFILE=main
 ENV ARMA_WORLD=empty
 ENV ARMA_LIMITFPS=1000
@@ -44,6 +45,8 @@ EXPOSE 2303/udp
 EXPOSE 2304/udp
 EXPOSE 2305/udp
 EXPOSE 2306/udp
+
+VOLUME /arma3
 
 WORKDIR /arma3
 

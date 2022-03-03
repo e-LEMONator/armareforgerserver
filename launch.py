@@ -7,7 +7,7 @@ import workshop
 
 
 def mod_param(name, mods):
-    return ' -{}="{}" '.format(name, ";".join(mods))
+    return ' -{}="{}" '.format(name, ";".join(mods)).replace('/arma3/', '')
 
 
 def env_defined(key):
@@ -25,8 +25,8 @@ if not os.path.isdir(KEYS):
 # Install Arma
 
 steamcmd = ["/steamcmd/steamcmd.sh"]
-steamcmd.extend(["+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"]])
 steamcmd.extend(["+force_install_dir", "/arma3"])
+steamcmd.extend(["+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"]])
 steamcmd.extend(["+app_update", "233780"])
 if env_defined("STEAM_BRANCH"):
     steamcmd.extend(["-beta", os.environ["STEAM_BRANCH"]])
@@ -45,6 +45,8 @@ if os.environ["MODS_PRESET"] != "":
 if os.environ["MODS_LOCAL"] == "true" and os.path.exists("mods"):
     mods.extend(local.mods("mods"))
 
+print(f"Mods list is: {mods}")
+
 launch = "{} -limitFPS={} -world={} {} {}".format(
     os.environ["ARMA_BINARY"],
     os.environ["ARMA_LIMITFPS"],
@@ -60,7 +62,7 @@ if os.environ["ARMA_CDLC"] != "":
 clients = int(os.environ["HEADLESS_CLIENTS"])
 print("Headless Clients:", clients)
 
-if clients != 0:
+if clients > 0:
     with open("/arma3/configs/{}".format(CONFIG_FILE)) as config:
         data = config.read()
         regex = r"(.+?)(?:\s+)?=(?:\s+)?(.+?)(?:$|\/|;)"
