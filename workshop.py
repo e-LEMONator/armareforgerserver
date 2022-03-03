@@ -34,9 +34,17 @@ def dir_rename_to_lower_recursive(dir):
         rename_all(path, subdirs)
 
 def preset(mod_file):
-    steam_id_list = []
     modslist = []
     mod_json = {}
+    if mod_file.startswith("http"):
+        req = urllib.request.Request(
+            mod_file,
+            headers={"User-Agent": USER_AGENT},
+        )
+        remote = urllib.request.urlopen(req)
+        with open("preset.html", "wb") as f:
+            f.write(remote.read())
+        mod_file = "preset.html"
     with open(mod_file) as f:
         table_data = [[cell.text for cell in row("td")]
             for row in BeautifulSoup(f, "html.parser")("tr")]
@@ -54,9 +62,3 @@ def preset(mod_file):
         modslist.append(mod_json[id])
     dir_rename_to_lower_recursive(WORKSHOP)
     return modslist
-
-def main():
-    preset("test_ace_mod_preset.html")
-
-if __name__ == '__main__':
-    main()
