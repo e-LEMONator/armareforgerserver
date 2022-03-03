@@ -45,8 +45,6 @@ if os.environ["MODS_PRESET"] != "":
 if os.environ["MODS_LOCAL"] == "true" and os.path.exists("mods"):
     mods.extend(local.mods("mods"))
 
-print(f"Mods list is: {mods}")
-
 launch = "{} -limitFPS={} -world={} {} {}".format(
     os.environ["ARMA_BINARY"],
     os.environ["ARMA_LIMITFPS"],
