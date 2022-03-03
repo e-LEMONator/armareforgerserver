@@ -27,7 +27,7 @@ RUN apt-get update \
     wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - -C /steamcmd
 
 ENV ARMA_BINARY=./arma3server_x64
-ENV ARMA_CONFIG=server.cfg
+ENV ARMA_CONFIG=main.cfg
 ENV ARMA_PROFILE=main
 ENV ARMA_WORLD=empty
 ENV ARMA_LIMITFPS=1000
