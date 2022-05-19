@@ -1,7 +1,7 @@
 FROM debian:buster-slim
 
-LABEL maintainer="Brett - github.com/brettmayson"
-LABEL org.opencontainers.image.source=https://github.com/brettmayson/arma3server
+LABEL maintainer="eLEMONator - github.com/e-LEMONator"
+LABEL org.opencontainers.image.source=https://github.com/e-LEMONator/armareforgerserver
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update \
@@ -26,29 +26,23 @@ RUN apt-get update \
     && \
     wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - -C /steamcmd
 
-ENV ARMA_BINARY=./arma3server_x64
-ENV ARMA_CONFIG=main.cfg
-ENV ARMA_PROFILE=main
-ENV ARMA_WORLD=empty
-ENV ARMA_LIMITFPS=1000
-ENV ARMA_PARAMS=
-ENV ARMA_CDLC=
-ENV HEADLESS_CLIENTS=0
-ENV PORT=2302
+ENV ARMA_BINARY=./ArmaReforgerServer
+ENV ARMA_CONFIG=omniserver.json
+ENV ARMA_MAXFPS=1000
+ENV ARMA_PROFILE=omni
+ENV LOG_LEVEL=normal
+ENV MODS_PRESET=
+ENV PORT=2001
 ENV STEAM_BRANCH=public
 ENV STEAM_BRANCH_PASSWORD=
 ENV MODS_LOCAL=true
 ENV MODS_PRESET=
 
-EXPOSE 2302/udp
-EXPOSE 2303/udp
-EXPOSE 2304/udp
-EXPOSE 2305/udp
-EXPOSE 2306/udp
+EXPOSE 2001/udp
 
-VOLUME /arma3
+VOLUME /armareforger
 
-WORKDIR /arma3
+WORKDIR /armareforger
 
 VOLUME /steamcmd
 

@@ -1,21 +1,20 @@
 version: '3.8'
 services:
-  arma3:
+  armareforger:
     build: .
-    image: synixebrett/arma3server
+    image: elemonator/armareforgerserver
     platform: linux/amd64
-    container_name: arma3
+    container_name: armareforger
     network_mode: host
     volumes:
-      - arma3root:/arma3
+      - armareforgerroot:/armareforger
       - steamcmd:/steamcmd
-      - './missions:/arma3/mpmissions'
-      - './configs:/arma3/configs'
-      - './mods:/arma3/mods'
-      - './servermods:/arma3/servermods'
+      - './configs:/armareforger/configs'
+      - './missions:/armareforger/mpmissions'
+      - './profile:/armareforger/profile'
     env_file: .env
-    restart: unless-stopped
+    # restart: unless-stopped
 volumes:
-  arma3root:
+  armareforgerroot:
   steamcmd:
 
