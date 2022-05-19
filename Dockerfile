@@ -30,7 +30,7 @@ RUN apt-get update \
     wget -qO- 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar zxf - -C /steamcmd
 
 ENV ARMA_BINARY=./ArmaReforgerServer
-ENV ARMA_CONFIG=omniserver.json
+ENV ARMA_CONFIG=server.json
 ENV ARMA_MAXFPS=1000
 ENV LOG_LEVEL=normal
 ENV PORT=2001
