@@ -1,31 +1,31 @@
 {
-	"dedicatedServerId": "",
-	"region": "US-FL",
-	"gameHostBindAddress": "",
-	"gameHostBindPort": 2001,
-	"gameHostRegisterBindAddress": "",
-	"gameHostRegisterPort": 2001,
-	"adminPassword": "superporn",
-	"game": {
-		"name": "Omni Fun",
-		"password": "porn",
-		"scenarioId": "{59AD59368755F41A}Missions/21_GM_Eden.conf",
-		"playerCountLimit": 32,
-		"autoJoinable": false,
-		"visible": true,
-		"gameProperties": {
-			"serverMaxViewDistance": 2500,
-			"serverMinGrassDistance": 50,
-			"networkViewDistance": 1000,
-			"disableThirdPerson": true,
-			"fastValidation": true,
-			"battlEye": true,
-			"missionHeader": {
-				"m_iPlayerCount": 40,
-				"m_eEditableGameFlags": 6,
-				"m_eDefaultGameFlags": 6,
-				"other": "values"
-			}
-		}
-	}
+    "dedicatedServerId": "a54e581e-80f1-4732-b848-1eb6df66c80e",
+    "region": "US-FL",
+    "gameHostBindAddress": "",
+    "gameHostBindPort": 2001,
+    "gameHostRegisterBindAddress": "",
+    "gameHostRegisterPort": 2001,
+    "adminPassword": "superporn",
+    "game": {
+        "name": "Omni Fun",
+        "password": "porn",
+        "scenarioId": "{ECC61978EDCC2B5A}Missions/23_Campaign.conf",
+        "playerCountLimit": 32,
+        "autoJoinable": false,
+        "visible": true,
+        "gameProperties": {
+            "serverMaxViewDistance": 2500,
+            "serverMinGrassDistance": 50,
+            "networkViewDistance": 1000,
+            "disableThirdPerson": true,
+            "fastValidation": true,
+            "battlEye": true,
+            "missionHeader": {
+                "m_iPlayerCount": 40,
+                "m_eEditableGameFlags": 6,
+                "m_eDefaultGameFlags": 6,
+                "other": "values"
+            }
+        }
+    }
 }

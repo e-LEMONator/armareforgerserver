@@ -13,6 +13,9 @@ RUN apt-get update \
         lib32gcc1 \
         wget \
         ca-certificates \
+        libcurl4 \
+        net-tools \
+        libssl1.1 \
     && \
     apt-get remove --purge -y \
     && \
@@ -29,9 +32,7 @@ RUN apt-get update \
 ENV ARMA_BINARY=./ArmaReforgerServer
 ENV ARMA_CONFIG=omniserver.json
 ENV ARMA_MAXFPS=1000
-ENV ARMA_PROFILE=omni
 ENV LOG_LEVEL=normal
-ENV MODS_PRESET=
 ENV PORT=2001
 ENV STEAM_BRANCH=public
 ENV STEAM_BRANCH_PASSWORD=

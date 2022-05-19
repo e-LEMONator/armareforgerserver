@@ -35,12 +35,12 @@ if os.environ["MODS_PRESET"] != "":
         os.environ["MODS_PRESET"]
     )
 
-launch += ' -config ./configs/{} -profile ./profile/ -listScenarios -logLevel {}'.format(
+launch += ' -config ./configs/{} -profile ./profile/ -logLevel {}'.format(
     os.environ["ARMA_CONFIG"],
     os.environ["LOG_LEVEL"]
 )
 
 print("LAUNCHING ARMA SERVER WITH", launch, flush=True)
-while(True):
-    pass
+# while(True):
+#     pass
 os.system(launch)

@@ -8,8 +8,9 @@
 *.Arma3Profile
 
 # Directorys
-configs/profiles/*
+configs/*
 missions/*
+profile/*
 __pycache__/*
 
 # IDE Files
